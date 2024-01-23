@@ -22,11 +22,12 @@ const NotFound = () => {
             />
             </div>
         </main>
-        <div className="grid justify-items-end mr-4">
+        <div className="grid justify-items-center">
         <Boton onClick={() => router.back()}>
           Página anterior
         </Boton>
         </div>
+        <br/>
     </div>
   )
 }
