@@ -8,26 +8,29 @@ export default function Nosotros() {
                     className="rounded-lg"
                     src={"/cocina.jpg"}
                     alt={"Cocinando con amor"}
-                    width={450}
-                    height={200}
+                    width={400}
+                    height={400}
                 />
                 <div className="col-span-3">
-                    <p>Bienvenidos a <b>Electrodomésticos Capellari</b>, una tradición familiar que perdura desde 1843. Nos enorgullece ser una empresa dedicada a brindar soluciones en electrodomésticos con un compromiso inquebrantable con la calidad, la confianza y el servicio excepcional.
+                    <p className="text-lg">Bienvenidos a <b>Electrodomésticos Capellari</b>, una tradición familiar que perdura desde 1843. Nos enorgullece ser una empresa dedicada a brindar soluciones en electrodomésticos con un compromiso inquebrantable con la calidad, la confianza y el servicio excepcional.
                     </p>
 
                     <br />
 
-                    <p>
+                    <p className="text-lg">
                         <b>Nuestra Historia</b>:
                         Desde nuestros humildes comienzos en 1843, hemos sido testigos de la evolución de la industria de electrodomésticos y nos hemos adaptado para satisfacer las cambiantes necesidades de nuestros clientes. A lo largo de las generaciones, hemos construido una reputación sólida basada en la integridad y la dedicación a ofrecer productos de alta calidad.
                     </p>
 
-                    <br />
-                    <b>Valores Fundamentales</b>:
-                    En Electrodomésticos Capellari, valoramos la importancia de la familia y la comunidad. Nos esforzamos por construir relaciones a largo plazo con nuestros clientes, tratándolos como miembros extendidos de nuestra propia familia. La transparencia, la honestidad y la ética son los pilares que sustentan cada interacción y transacción.
                 </div>
             </div>
             <div>
+                <p>
+                    <b>Valores Fundamentales</b>:
+                    En Electrodomésticos Capellari, valoramos la importancia de la familia y la comunidad. Nos esforzamos por construir relaciones a largo plazo con nuestros clientes, tratándolos como miembros extendidos de nuestra propia familia. La transparencia, la honestidad y la ética son los pilares que sustentan cada interacción y transacción.
+                </p>
+                <br />
+
                 <p>
                     <b>Selección Excepcional</b>:
                     Explora nuestro extenso catálogo de electrodomésticos de las marcas más confiables del mercado. Desde las innovadoras tecnologías hasta los diseños clásicos, ofrecemos una selección que combina funcionalidad y estilo para satisfacer todos los gustos y necesidades.
