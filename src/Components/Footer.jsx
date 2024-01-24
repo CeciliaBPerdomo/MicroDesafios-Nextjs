@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 const Footer = () => {
     return (
+        <>
+        <br />
         <footer className="w-full bg-gray-100 border-t">
             <div className='container m-auto py-2 text-sm text-gray-700 flex justify-between items-center'>
                 <p>Desarrollado por <b>Cecilia Perdomo</b> 💛</p>
@@ -19,6 +21,7 @@ const Footer = () => {
             </div>
 
         </footer>
+        </>
     )
 }
 

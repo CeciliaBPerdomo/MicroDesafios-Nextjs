@@ -20,6 +20,11 @@ const Navbar = () => {
         {
             label: "Contacto",
             href: "/contacto"
+        },
+
+        {
+            label: "🛒",
+            href: "/"
         }
     ]
 
@@ -35,24 +40,25 @@ const Navbar = () => {
                                 width={100}
                                 height={200}
                             />
-                            </Link>
+                        </Link>
                     </p>
                     <nav className='flex justify-between gap-2'>
                         {links.map(link => {
-                             return(
+                            return (
                                 <Link
-                                key = {link.label}
-                                href={link.href}
-                                // queda en negrita cuando esta activo el link
-                                className={`${pathname === link.href ? 'font-bold': ''} text-base p-3`}
+                                    key={link.label}
+                                    href={link.href}
+                                    // queda en negrita cuando esta activo el link
+                                    className={`${pathname === link.href ? 'font-bold' : ''} text-base p-3 text-red-600 text-2xl`}
                                 >
                                     {link.label}
                                 </Link>
-                             )
+                            )
                         })}
                     </nav>
                 </div>
             </header>
+            <br />
         </div>
     )
 }
