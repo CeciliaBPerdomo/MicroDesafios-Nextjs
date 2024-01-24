@@ -24,12 +24,12 @@ const Navbar = () => {
 
         {
             label: "🛒",
-            href: "/"
+            href: "/carrito"
         },
 
         {
             label: "👤",
-            href: "/"
+            href: "/login"
         }
     ]
 
