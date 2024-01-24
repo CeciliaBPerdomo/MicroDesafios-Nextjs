@@ -25,6 +25,11 @@ const Navbar = () => {
         {
             label: "🛒",
             href: "/"
+        },
+
+        {
+            label: "👤",
+            href: "/"
         }
     ]
 
