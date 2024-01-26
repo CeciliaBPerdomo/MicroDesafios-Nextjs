@@ -1,4 +1,5 @@
 import ProductsList from "@/Components/productos/productList"
+import CategoriesMenu from "@/Components/productos/CategoriesMenu"
 
 const Productos = ({ params }) => {
     const { categoria } = params
@@ -9,7 +10,7 @@ const Productos = ({ params }) => {
                 <hr />
                 <br />
                 <div className="flex gap-10">
-                    {/* <CategoriesMenu /> */}
+                    <CategoriesMenu />
                     <ProductsList categoria={categoria} />
                 </div>
             </div>

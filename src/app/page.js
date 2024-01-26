@@ -9,6 +9,8 @@ export default function Home() {
         <br />
 
         <ProductsList categoria={"tvs"} />
+        <br />
+        <ProductsList categoria={"notebook"} />
     </main>
   );
 }

@@ -39,4 +39,55 @@ export const mockData = [
         type: "notebook",
         destacado: "si"
     }, 
+    {
+        title: "Apple MacBook Air M1 Octa Core Retina 13.3'", 
+        description: "La notebook más ligera y delgada vuelve completamente renovada por dentro, gracias al chip M1 de Apple. La máquina ideal para el día a día, equipada con una pantalla Retina de 13.3', 8GB de RAM y 256GB SSD para la productividad, el rendimiento y el entretenimiento tanto en casa como fuera de ella.",
+        inStock: 100,
+        price: 1299,
+        slug: "notebook2",
+        image: "notebook/notebook2.png",
+        type: "notebook",
+        destacado: "no"
+    }, 
+    {
+        title: "Notebook LENOVO NUEVA 14' Intel N4020", 
+        description: "Esta notebook Lenovo de 14', 4GB de RAM y 64GB de almacenamiento tiene un diseño ligero y delgado. Equipada con sistema operativo Windows 11 Home, con un procesador Intel Celeron N4020 con una frecuencia de CPU de 1.1GHz. Cuenta con pantalla HD antirreflejos con retroiluminación LED.",
+        inStock: 100,
+        price: 247,
+        slug: "notebook2",
+        image: "notebook/notebook3.png",
+        type: "notebook",
+        destacado: "no"
+    }, 
+
+    {
+        title: "Monitor Curvo KOLKE 31.5' FHD 165Hz", 
+        description: "Este monitor curvo Kolke de 31.5' te brinda una experiencia visual inmersiva y de alta calidad. Equipado con un panel AUO VA Grado A, este monitor garantiza imágenes claras y nítidas con una resolución Full HD de 1920×1080.",
+        inStock: 100,
+        price: 227,
+        slug: "monitor1",
+        image: "monitor/monitor1.png",
+        type: "monitor",
+        destacado: "no"
+    },
+    {
+        title: "Monitor LG 23.8' IPS FHD con AMD FreeSync", 
+        description: "El monitor IPS LG Full HD de 23.8' es el complemento perfecto para tu experiencia visual. Con su pantalla de alta resolución Full HD y tecnología IPS, disfrutarás de imágenes nítidas y colores vibrantes en cada detalle.",
+        inStock: 100,
+        price: 159,
+        slug: "monitor2",
+        image: "monitor/monitor2.png",
+        type: "monitor",
+        destacado: "no"
+    }, 
+    {
+        title: "Monitor Curvo KOLKE 27' FHD 165Hz", 
+        description: "Este Monitor Curvo Kolke de 27' es el compañero perfecto para mejorar tu experiencia visual. Con una relación de aspecto de 16:9 y un ángulo de visión de 178°, podrás disfrutar de imágenes nítidas y colores vibrantes desde cualquier ángulo.",
+        inStock: 100,
+        price: 177,
+        slug: "monitor3",
+        image: "monitor/monitor3.png",
+        type: "monitor",
+        destacado: "no"
+    }, 
 ]
