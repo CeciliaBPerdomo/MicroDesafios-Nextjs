@@ -5,7 +5,7 @@ export const mockData = [
         inStock: 100,
         price: 499,
         slug: "tele1",
-        image: "tvs/tele1.jpeg",
+        image: "tvs/tele1.jpg",
         type: "tvs",
         destacado: "si"
     }, 
@@ -15,7 +15,7 @@ export const mockData = [
         inStock: 100,
         price: 579,
         slug: "tele2",
-        image: "tvs/tele2.jpeg",
+        image: "tvs/tele2.png",
         type: "tvs",
         destacado: "si"
     }, 
@@ -25,8 +25,18 @@ export const mockData = [
         inStock: 100,
         price: 519,
         slug: "tele3",
-        image: "tvs/tele3.jpeg",
+        image: "tvs/tele3.png",
         type: "tvs",
         destacado: "no"
+    }, 
+    {
+        title: "Notebook LENOVO NUEVA 14” FHD AMD Ryzen 5 7520U 256GB", 
+        description: "Esta Notebook Lenovo de 14' con procesador AMD Ryzen 5 ha sido diseñada para brindarte una experiencia de rendimiento excepcional. Está equipada con una pantalla TN de 14' Full HD (1920 x 1080p) con la que podrás disfrutar de imágenes nítidas y vibrantes en cada detalle. ",
+        inStock: 100,
+        price: 539,
+        slug: "notebook1",
+        image: "notebook/notebook1.png",
+        type: "notebook",
+        destacado: "si"
     }, 
 ]
