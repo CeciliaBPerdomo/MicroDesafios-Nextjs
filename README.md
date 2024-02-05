@@ -1,3 +1,26 @@
+<p align=center>
+    <img 
+        src="./public/Logo.png"
+        width="20%"
+    >
+</p>
+
+<h1 align="center"> Electrodomésticos Capellari </h1>
+
+<h4 align="center">
+    :construction: Proyecto en construcción :construction:
+</h4>
+
+<p align="center">
+   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+</p>
+
+## :hammer: Funcionalidades del proyecto
+
+`Funcionalidad`: Se trata de un un e-commerce de electrodomésticos de la familia Capellari, que buscan modernizar la forma en que venden sus productos.
+
+
+## 🛠️ Abre y ejecuta el proyecto
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

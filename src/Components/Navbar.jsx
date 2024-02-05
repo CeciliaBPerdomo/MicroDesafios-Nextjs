@@ -35,7 +35,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <header className="w-full py-6 bg-red-200">
+            <header className="w-full py-6 bg-red-200 border-b border-red-600">
                 <div className='container m-auto flex justify-between items-center'>
                     <p className='text-4xl text-bold text-slate-100'>
                         <Link href={"/"}>

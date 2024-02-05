@@ -4,11 +4,10 @@ import Image from 'next/image'
 const Footer = () => {
     return (
         <>
-            <br />
-            <footer className="w-full bg-red-100 border-t">
+            <footer className="w-full bg-red-100 border-t border-red-600 mt-10">
                 <div className='container m-auto py-2 text-sm text-black flex justify-between items-center'>
-                    <p>Desarrollado por <b>Cecilia Perdomo</b> 💛</p>
-
+                    <p>Desarrollado con ❤️ por <b>Cecilia Perdomo</b></p>
+                    
                     <div className='flex items-center gap-2'>
                         <p className='text-black'>Powered by</p>
                         <Image
