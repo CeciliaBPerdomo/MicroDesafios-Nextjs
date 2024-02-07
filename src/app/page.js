@@ -7,9 +7,9 @@ export default function Home() {
         <hr />
         <br />
 
-        <ProductsList categoria={"tvs"} />
-        <br />
         <ProductsList categoria={"notebook"} />
+        <br />
+        <ProductsList categoria={"mouse"} />
     </main>
   );
 }
