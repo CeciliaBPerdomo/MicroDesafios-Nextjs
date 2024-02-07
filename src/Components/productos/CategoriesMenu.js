@@ -6,7 +6,8 @@ const links = [
     {label: "Todos", href: "/productos/todos"},
     {label: "Tvs", href: "/productos/tvs"},
     {label: "Monitores", href: "/productos/monitor"},
-    {label: "Notebooks", href: "/productos/notebook"}
+    {label: "Notebooks", href: "/productos/notebook"},
+    {label: "Mouse", href: "/productos/mouse"},
 ]
 const CategoriesMenu = () => {
     const pathname = usePathname()   

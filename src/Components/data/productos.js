@@ -54,7 +54,7 @@ export const mockData = [
         description: "Esta notebook Lenovo de 14', 4GB de RAM y 64GB de almacenamiento tiene un diseño ligero y delgado. Equipada con sistema operativo Windows 11 Home, con un procesador Intel Celeron N4020 con una frecuencia de CPU de 1.1GHz. Cuenta con pantalla HD antirreflejos con retroiluminación LED.",
         inStock: 100,
         price: 247,
-        slug: "notebook2",
+        slug: "notebook3",
         image: "notebook/notebook3.png",
         type: "notebook",
         destacado: "no"
