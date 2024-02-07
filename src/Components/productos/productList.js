@@ -4,9 +4,7 @@ const ProductsList = async ({ categoria }) => {
     try {
         const response = await fetch(`http://localhost:3000/api/productos/${categoria}`, {
             cache: "no-store", // la informacion que sea siempre actualizada
-            next: {
-                tags: ["productos"]
-            },
+            next: { tags: ["productos"] },
             headers: { 'Content-Type': 'application/json' }  // Especifica el tipo de contenido esperado
         })
         if (!response.ok) {
