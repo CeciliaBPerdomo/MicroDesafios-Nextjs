@@ -3,6 +3,7 @@ import Image from 'next/image';                 // Imagenes
 import React from 'react';                      // React 
 import Link from 'next/link';                   // Link
 import { usePathname } from 'next/navigation';  // Links activos
+import CartWidget from './cartWidget';
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -20,11 +21,6 @@ const Navbar = () => {
         {
             label: "Contacto",
             href: "/contacto"
-        },
-
-        {
-            label: "🛒",
-            href: "/carrito"
         },
 
         {
@@ -60,6 +56,7 @@ const Navbar = () => {
                                 </Link>
                             )
                         })}
+                        <CartWidget />
                     </nav>
                 </div>
             </header>
