@@ -1,5 +1,4 @@
 import ProductsTable from "@/Components/admin/ProductsTable"
-import Boton from "@/Components/Boton"
 
 const Admin = () => {
     return (
