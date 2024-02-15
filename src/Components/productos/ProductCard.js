@@ -8,7 +8,7 @@ const ProductCard = ({ item }) => {
             <div className="flex justify-center align-center" style={{height: 200}}>
                 <Image
                     alt={item.title}
-                    src={`/productos/${item.image}`}
+                    src={item.image}
                     width={240}
                     height={200}
                     style={{ objectFit: "contain" }}

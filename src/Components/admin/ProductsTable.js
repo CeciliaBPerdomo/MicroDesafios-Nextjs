@@ -27,7 +27,7 @@ const ProductsTable = async () => {
                         <tr key={item.slug} className="border-b">
                             <td className="p-2">
                                 <Image
-                                    src={`/productos/${item.image}`}
+                                  src={item.image}
                                     alt={item.title}
                                     width={80}
                                     height={60}

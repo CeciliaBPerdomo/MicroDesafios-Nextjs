@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from '@/Components/Navbar'
 import Footer from '@/Components/Footer'
 import { CartProvider } from "@/Components/Context/CartContext";
+import { AuthProvider } from "@/Components/Context/AuthContext";
 
 export const metadata = {
   title: "Electrodomésticos Capellari",
@@ -13,11 +14,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* Para que se pueda acceder desde cualquier lugar */}
-        <CartProvider>
-          <Navbar />
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
             {children}
-          <Footer />
-        </CartProvider>
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
