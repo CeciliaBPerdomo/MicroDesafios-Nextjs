@@ -47,15 +47,15 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
 
-                <div>
+                <div className="columns-4">
                     <Boton
                         onClick={() => loginUser(values)}
-                        className="mr-4">
+                    >
                         Loguearse
                     </Boton>
                     <Boton onClick={() => registerUser(values)}>Registrarme</Boton>
                 </div>
-                
+
             </form>
         </div>
     )

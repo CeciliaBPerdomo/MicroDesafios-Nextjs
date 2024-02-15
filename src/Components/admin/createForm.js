@@ -27,10 +27,22 @@ const CreateForm = () => {
         inStock: 0,
         price: 0,
         type: "",
-        slug: ""
+        slug: "",
+        file: null
     })
 
-    const [file, setFile] = useState(null)
+    const handleFileChange = (e) => {
+        // Access the selected file
+        const selectedFile = e.target.files[0];
+    
+        // Update the state with the selected file
+        setValues({
+            ...values,
+            file: selectedFile
+        });
+
+      };
+    
 
     const handleChange = (e) => {
         setValues({
@@ -73,10 +85,10 @@ const CreateForm = () => {
                 <input
                     type="file"
                     required
-                    value={file}
+                  //  value={values.file}
                     className="p-2 rounded w-full border border-blue-100 block my-4"
                     name="file"
-                    onChange={(e) => setFile(e.target.files[0])}
+                    onChange={handleFileChange}
                 />
 
                 <label>Precio: </label>
