@@ -76,7 +76,7 @@ const CreateForm = () => {
                     value={file}
                     className="p-2 rounded w-full border border-blue-100 block my-4"
                     name="file"
-                    onChange={handleChange}
+                    onChange={(e) => setFile(e.target.files[0])}
                 />
 
                 <label>Precio: </label>

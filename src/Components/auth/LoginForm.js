@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import Boton from "../Boton"
+import { useAuthContext } from "../Context/AuthContext"
 
 const LoginForm = () => {
-
+    const { registerUser, loginUser } = useAuthContext()
     const [values, setValues] = useState({
         email: "",
         password: ""
@@ -26,7 +27,7 @@ const LoginForm = () => {
         <div className="fixed w-screen h-screen inset-0 z-10 flex justify-center items-center bg-red-400 bg-opacity-25">
             <form onSubmit={handleSubmit} className="bg-white py-4 px-6 rounded-xl max-w-md w-full">
                 <h2 className="text-xl text-red-600">Iniciar sesión</h2>
-                <input 
+                <input
                     type="email"
                     value={values.email}
                     required
@@ -36,7 +37,7 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
 
-                <input 
+                <input
                     type="password"
                     value={values.password}
                     required
@@ -46,7 +47,15 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
 
-                <Boton type="submit">Loguearse</Boton>
+                <div>
+                    <Boton
+                        onClick={() => loginUser(values)}
+                        className="mr-4">
+                        Loguearse
+                    </Boton>
+                    <Boton onClick={() => registerUser(values)}>Registrarme</Boton>
+                </div>
+                
             </form>
         </div>
     )
