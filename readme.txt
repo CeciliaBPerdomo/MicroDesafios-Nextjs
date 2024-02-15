@@ -1,5 +1,8 @@
-Firebase:
+rm .next
+npm install 
 
+
+Firebase:
 1. Crear nuevo producto
 2. Darle un nombre, y desmarcar el habiliar el google analytics
 3. Crear proyecto

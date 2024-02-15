@@ -2,13 +2,22 @@
 
 import { useState } from "react"
 import Boton from "../Boton"
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import { doc, setDoc } from "firebase/firestore"
-import { db } from "@/app/firebase/config"
+import { db, storage } from "@/app/firebase/config"
 
-const createProduct = async(values) => {
+const createProduct = async (values, file) => {
+    //  para guardar imagenes
+    const storageRef = ref(storage, values.slug)
+    const fileSnapshot = await uploadBytes(storageRef, file)
+    const fileURL = await getDownloadURL(fileSnapshot.ref)
+
     const docRef = doc(db, "productos", values.slug)
-    return setDoc(docRef, {...values})
-    .then(() => console.log("Producto agregado exitosamente"))
+    return setDoc(docRef, {
+        ...values,
+        image: fileURL
+    })
+        .then(() => console.log("Producto agregado exitosamente"))
 }
 
 const CreateForm = () => {
@@ -20,6 +29,8 @@ const CreateForm = () => {
         type: "",
         slug: ""
     })
+
+    const [file, setFile] = useState(null)
 
     const handleChange = (e) => {
         setValues({
@@ -55,6 +66,16 @@ const CreateForm = () => {
                     value={values.title}
                     className="p-2 rounded w-full border border-red-100 block my-4"
                     name="title"
+                    onChange={handleChange}
+                />
+
+                <label>Imágen: </label>
+                <input
+                    type="file"
+                    required
+                    value={file}
+                    className="p-2 rounded w-full border border-blue-100 block my-4"
+                    name="file"
                     onChange={handleChange}
                 />
 
