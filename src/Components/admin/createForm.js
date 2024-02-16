@@ -33,7 +33,7 @@ const CreateForm = () => {
 
     const handleFileChange = (e) => {
         // Access the selected file
-        const selectedFile = e.target.files[0];
+        const selectedFile = e.target.files[0].name;
     
         // Update the state with the selected file
         setValues({
