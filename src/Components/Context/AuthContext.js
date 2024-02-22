@@ -1,8 +1,10 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react"
 
-import { auth, provider } from "@/app/firebase/config"
+import { auth, provider, db } from "@/app/firebase/config"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth"
+import { doc, getDoc } from "firebase/firestore"
+import { useRouter } from "next/navigation"
 
 const AuthContext = createContext()
 export const useAuthContext = () => useContext(AuthContext)
@@ -13,6 +15,8 @@ export const AuthProvider = ({ children }) => {
         email: null,
         uid: null
     })
+
+    const router = useRouter()
 
     const registerUser = async (values) => {
         await createUserWithEmailAndPassword(auth, values.email, values.password)
@@ -31,15 +35,23 @@ export const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             //console.log(user)
 
             if (user) {
-                setUser({
-                    logged: true,
-                    email: user.email,
-                    uid: user.uid
-                })
+                const docRef = doc(db, "roles", user.uid)
+                const userDoc = await getDoc(docRef)
+
+                if (userDoc.data()?.rol === "admin") {
+                    setUser({
+                        logged: true,
+                        email: user.email,
+                        uid: user.uid
+                    })
+                } else {
+                    router.push("/unauthorized")
+                    logOut()
+                }
             } else {
                 setUser({
                     logged: false,
@@ -58,7 +70,7 @@ export const AuthProvider = ({ children }) => {
                 user,
                 registerUser,
                 loginUser,
-                logOut, 
+                logOut,
                 googleLogin
             }}>
             {children}

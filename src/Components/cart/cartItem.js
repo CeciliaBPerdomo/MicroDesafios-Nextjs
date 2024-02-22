@@ -3,7 +3,7 @@ const CartItem = async ({ item }) => {
 
     return (
         <div className="container m-auto ml-6 mb-4">
-            <div class="grid grid-cols-6 gap-2">
+            <div className="grid grid-cols-6 gap-2">
                 <div className="col-start-1">
                     <Image 
                     src={item.image}

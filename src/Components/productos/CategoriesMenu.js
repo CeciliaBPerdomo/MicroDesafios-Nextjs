@@ -8,6 +8,7 @@ const links = [
     {label: "Monitores", href: "/productos/monitor"},
     {label: "Notebooks", href: "/productos/notebook"},
     {label: "Mouse", href: "/productos/mouse"},
+    {label: "Teclados", href: "/productos/teclado"},
 ]
 const CategoriesMenu = () => {
     const pathname = usePathname()   
