@@ -2,7 +2,7 @@
 import { useCartContext } from "@/Components/Context/CartContext"
 import CartList from "@/Components/cart/CartList"
 import ClientForm from "@/Components/cart/ClientForm"
-// import CartItem from "@/Components/cart/cartItem"
+
 import Link from "next/link"
 
 const Carrito = () => {

@@ -36,7 +36,6 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
-            //console.log(user)
 
             if (user) {
                 const docRef = doc(db, "roles", user.uid)
