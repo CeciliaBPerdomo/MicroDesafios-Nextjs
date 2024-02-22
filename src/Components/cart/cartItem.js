@@ -6,7 +6,7 @@ const CartItem = async ({ item }) => {
             <div class="grid grid-cols-6 gap-2">
                 <div className="col-start-1">
                     <Image 
-                    src={`/productos/${item.image}`}
+                    src={item.image}
                     alt={item.title}
                     width={80}
                     height={80}

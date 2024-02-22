@@ -2,23 +2,30 @@
 
 import { useState } from "react"
 import Boton from "../Boton"
+
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import { doc, setDoc } from "firebase/firestore"
 import { db, storage } from "@/app/firebase/config"
 
-const createProduct = async (values, file) => {
+const createProduct = async (values, archivo) => {
     //  para guardar imagenes
-    const storageRef = ref(storage, values.slug)
-    const fileSnapshot = await uploadBytes(storageRef, file)
-    const fileURL = await getDownloadURL(fileSnapshot.ref)
-
+    try {
+        const storageRef = ref(storage, values.slug)
+        const fileSnapshot = await uploadBytes(storageRef, archivo)
+        const fileURL = await getDownloadURL(fileSnapshot.ref)
+    
     const docRef = doc(db, "productos", values.slug)
     return setDoc(docRef, {
         ...values,
         image: fileURL
     })
         .then(() => console.log("Producto agregado exitosamente"))
+
+    } catch (error) {
+        console.log(error)
+    }
 }
+
 
 const CreateForm = () => {
     const [values, setValues] = useState({
@@ -28,21 +35,10 @@ const CreateForm = () => {
         price: 0,
         type: "",
         slug: "",
-        file: null
     })
 
-    const handleFileChange = (e) => {
-        // Access the selected file
-        const selectedFile = e.target.files[0].name;
-    
-        // Update the state with the selected file
-        setValues({
-            ...values,
-            file: selectedFile
-        });
+    const [file, setFile] = useState(null)
 
-      };
-    
 
     const handleChange = (e) => {
         setValues({
@@ -54,7 +50,7 @@ const CreateForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(values)
-        await createProduct(values)
+        await createProduct(values, file)
     }
 
     return (
@@ -85,10 +81,9 @@ const CreateForm = () => {
                 <input
                     type="file"
                     required
-                  //  value={values.file}
                     className="p-2 rounded w-full border border-blue-100 block my-4"
                     name="file"
-                    onChange={handleFileChange}
+                    onChange={(e) => { setFile(e.target.files[0]) }}
                 />
 
                 <label>Precio: </label>

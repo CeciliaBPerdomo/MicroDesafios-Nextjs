@@ -1,8 +1,8 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react"
 
-import { auth } from "@/app/firebase/config"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth"
+import { auth, provider } from "@/app/firebase/config"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth"
 
 const AuthContext = createContext()
 export const useAuthContext = () => useContext(AuthContext)
@@ -16,35 +16,23 @@ export const AuthProvider = ({ children }) => {
 
     const registerUser = async (values) => {
         await createUserWithEmailAndPassword(auth, values.email, values.password)
-        // const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password)
-
-        // const user = userCredential.user
-        // setUser({
-        //     logged: true,
-        //     email: user.email,
-        //     uid: user.uid
-        // })
     }
 
     const loginUser = async (values) => {
         await signInWithEmailAndPassword(auth, values.email, values.password)
-        // const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password)
-        // const user = userCredential.user
-
-        // setUser({
-        //     logged: true,
-        //     email: user.email,
-        //     uid: user.uid
-        // })
     }
 
     const logOut = async () => {
         await signOut(auth)
     }
 
+    const googleLogin = async () => {
+        await signInWithPopup(auth, provider)
+    }
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
-            console.log(user)
+            //console.log(user)
 
             if (user) {
                 setUser({
@@ -70,7 +58,8 @@ export const AuthProvider = ({ children }) => {
                 user,
                 registerUser,
                 loginUser,
-                logOut
+                logOut, 
+                googleLogin
             }}>
             {children}
         </AuthContext.Provider>

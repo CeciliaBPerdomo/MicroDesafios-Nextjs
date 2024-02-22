@@ -5,7 +5,7 @@ import Boton from "../Boton"
 import { useAuthContext } from "../Context/AuthContext"
 
 const LoginForm = () => {
-    const { registerUser, loginUser } = useAuthContext()
+    const { registerUser, loginUser, googleLogin } = useAuthContext()
     const [values, setValues] = useState({
         email: "",
         password: ""
@@ -47,15 +47,18 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
 
-                <div className="columns-4">
-                    <Boton
-                        onClick={() => loginUser(values)}
-                    >
-                        Loguearse
+                <div className="columns-3">
+                    <Boton onClick={() => loginUser(values)}>
+                        Loguearme
                     </Boton>
+
+                    <Boton onClick={googleLogin}>
+                        Loguearme con Google
+                    </Boton>
+
                     <Boton onClick={() => registerUser(values)}>Registrarme</Boton>
                 </div>
-
+                
             </form>
         </div>
     )
