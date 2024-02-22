@@ -41,8 +41,7 @@ const ClientForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const result = await createOrder(values, cart)
-        console.log(result)
+        await createOrder(values, cart)
     }
 
 
@@ -63,7 +62,7 @@ const ClientForm = () => {
                 <input
                     type="direccion"
                     required
-                    placeholder="Tu direccion"
+                    placeholder="Tu dirección"
                     className="p-2 rounded w-1/2 border border-red-100 block my-4"
                     name="direccion"
                     onChange={handleChange}
@@ -72,13 +71,15 @@ const ClientForm = () => {
                 <input
                     type="email"
                     required
-                    placeholder="Tu email"
+                    placeholder="Tu correo electrónico"
                     className="p-2 rounded w-1/2 border border-red-100 block my-4"
                     name="email"
                     onChange={handleChange}
                 />
 
-                <Boton type="submit">Terminar mi compra</Boton>
+                <Boton type="submit">
+                    Terminar mi compra
+                </Boton>
             </form>
         </div>
     )
