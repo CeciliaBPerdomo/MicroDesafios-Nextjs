@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 
 const ProductsList = async ({ categoria }) => {
     try {
-        const response = await fetch(`http://${process.env.VERCEL_URL}/api/productos/${categoria}`, {
+        const response = await fetch(`${process.env.VERCEL_URL}productos/${categoria}`, {
             cache: "no-store", // la informacion que sea siempre actualizada
             next: { tags: ["productos"] },
             headers: { 'Content-Type': 'application/json' }  // Especifica el tipo de contenido esperado
