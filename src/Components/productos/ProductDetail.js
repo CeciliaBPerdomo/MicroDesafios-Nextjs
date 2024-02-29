@@ -5,7 +5,7 @@ import QtySelector from "./QtySelector";
 const ProductDetail = async ({ slug }) => {
     console.log(slug)
 
-    const item = await fetch(`${process.env.VERCEL_URL}/api/product/${slug}`, {
+    const item = await fetch(`${process.env.API_URL}/api/product/${slug}`, {
         cache: "no-store",
         next: { revalidate: 0 }
     })
