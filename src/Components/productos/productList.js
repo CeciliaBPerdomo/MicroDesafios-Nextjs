@@ -19,7 +19,7 @@ const ProductsList = async ({ categoria }) => {
             )
         } else {
             console.error('Cadena JSON vacía o indefinida.');
-            return <p>No hay productos para esta categoria.</p>;
+            return <p>No hay productos disponibles.</p>;
         }
     } catch (error) {
         console.error('Error al obtener datos:', error);
