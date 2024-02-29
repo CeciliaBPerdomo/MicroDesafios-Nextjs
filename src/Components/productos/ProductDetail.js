@@ -3,7 +3,7 @@ import GoBack from "../GoBack";
 import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ slug }) => {
-    console.log(slug)
+    //    console.log(slug)
 
     const item = await fetch(`${process.env.API_URL}/api/product/${slug}`, {
         cache: "no-store",
@@ -33,7 +33,8 @@ const ProductDetail = async ({ slug }) => {
                     <h2 className="text-2xl font-semibold pb-4 mb-4 mt-16 text-center">
                         {item.title}
                     </h2>
-                    <p className="text-4xl font-semibold border-b border-gray-200 pb-2 text-center text-red-400">u$S {item.price}</p>
+                    <p className="text-4xl font-semibold border-b border-gray-200 pb-2 
+                    text-center text-red-400">u$S {item.price}</p>
                     {/* <hr /> */}
                     <QtySelector item={item} />
                 </div>

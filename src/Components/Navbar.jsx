@@ -23,10 +23,10 @@ const Navbar = () => {
             href: "/contacto"
         },
 
-        {
-            label: "👤",
-            href: "/login"
-        }
+        // {
+        //     label: "👤",
+        //     href: "/login"
+        // }
     ]
 
     return (
