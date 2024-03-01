@@ -6,8 +6,8 @@ const ProductDetail = async ({ slug }) => {
     //    console.log(slug)
 
     const item = await fetch(`${process.env.API_URL}/api/product/${slug}`, {
-        cache: "no-store",
-        next: { revalidate: 0 }
+        cache: "no-store"
+       // next: { revalidate: 0 }
     })
         .then(res => {
             if (!res.ok) {
