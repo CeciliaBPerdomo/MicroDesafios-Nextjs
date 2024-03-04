@@ -1,6 +1,6 @@
 import LogoutButton from "@/Components/admin/LogoutButton";
 import { db } from "../firebase/config"
-import { collection, getDocs, or } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const getOrders = async () => {
     const ordersRef = collection(db, "ordenes")

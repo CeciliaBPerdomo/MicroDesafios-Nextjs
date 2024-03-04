@@ -1,9 +1,9 @@
 "use client"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 // Context
 import { useCartContext } from "../Context/CartContext"
-//import { useAuthContext } from "../Context/AuthContext"
 
 // Firebase
 import { db } from "../../app/firebase/config"
@@ -13,10 +13,9 @@ import { setDoc, doc, Timestamp, getDoc, writeBatch } from "firebase/firestore"
 import Boton from "../Boton"
 
 const createOrder = async (values, items) => {
-    // Chequeo de stock
+    // Chequeo de stock --> error de index, no logro detectar donde
     // const docsPromises = items.map((slug) => {
     //     const docRef = doc(db, "productos", slug)
-    //     console.log(docRef)
     //     return getDoc(docRef)
     // })
 
@@ -27,7 +26,6 @@ const createOrder = async (values, items) => {
     // const outOfStock = []
 
     // docs.forEach(doc => {
-    //     console.log(doc)
     //     const { inStock } = doc.data()
     //     const itemInCart = items.find(item => item.slug === doc.slug)
     //     if (itemInCart.quantity >= inStock ) {
@@ -57,16 +55,14 @@ const createOrder = async (values, items) => {
 }
 
 const ClientForm = () => {
-    const { cart } = useCartContext()
-    // const { user } = useAuthContext()
+    const { cart, emptyCart } = useCartContext()
+    const router = useRouter()
 
     const [values, setValues] = useState({
         //updateProfile en firebase
-       // email: user.email,
-       //nombre: user.displayName
         email: "",
         direccion: "",
-         nombre: ""
+        nombre: ""
     })
 
     const handleChange = (e) => {
@@ -77,8 +73,10 @@ const ClientForm = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault()        
         await createOrder(values, cart)
+        emptyCart()
+        router.push("/thanks")
     }
 
 

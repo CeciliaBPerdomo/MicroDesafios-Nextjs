@@ -12,7 +12,7 @@ const CartItem = async ({ item }) => {
                     height={80}
                     />
                 </div>
-                <div className="col-start-2 col-end-5">{item.title}</div>
+                <div className="col-start-2 col-end-5">({item.quantity}) {item.title}</div>
                 <div className="col-start-6 text-red-600">U$S {item.price}</div>
             </div>
         </div>
