@@ -26,10 +26,9 @@ const Contacto = () => {
     return (
         <>
             <div className="container m-auto">
-                <h1 className="text-2xl text-bold">Contactate con nosotros</h1>
-                <hr />
+                <h1 className="text-2xl text-bold ml-6 border-b pb-2">Contactate con nosotros</h1>
 
-                <form className="my-12" onSubmit={handleSubmit}>
+                <form className="my-12 ml-6 mr-6" onSubmit={handleSubmit}>
                     <label htmlFor="email" className="block text-l font-medium leading-6 text-bold">
                         Correo electrónico:
                     </label>

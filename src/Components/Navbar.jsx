@@ -9,7 +9,7 @@ const Navbar = () => {
     const pathname = usePathname()
     const links = [
         {
-            label: "Productos",
+            label: "Catálogo",
             href: "/productos/todos"
         },
 
@@ -22,11 +22,6 @@ const Navbar = () => {
             label: "Contacto",
             href: "/contacto"
         },
-
-        // {
-        //     label: "👤",
-        //     href: "/login"
-        // }
     ]
 
     return (
