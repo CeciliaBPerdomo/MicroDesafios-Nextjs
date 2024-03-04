@@ -1,11 +1,43 @@
 "use client"
 import { useState } from "react"
-import Boton from "../Boton"
+
+// Context
 import { useCartContext } from "../Context/CartContext"
+//import { useAuthContext } from "../Context/AuthContext"
+
+// Firebase
 import { db } from "../../app/firebase/config"
-import { setDoc, doc, Timestamp } from "firebase/firestore"
+import { setDoc, doc, Timestamp, getDoc, writeBatch } from "firebase/firestore"
+
+// Componentes
+import Boton from "../Boton"
 
 const createOrder = async (values, items) => {
+    // Chequeo de stock
+    // const docsPromises = items.map((slug) => {
+    //     const docRef = doc(db, "productos", slug)
+    //     console.log(docRef)
+    //     return getDoc(docRef)
+    // })
+
+
+    // const docs = await Promise.all(docsPromises)    // trabajar en paralelo
+    // const batch = writeBatch(db)
+
+    // const outOfStock = []
+
+    // docs.forEach(doc => {
+    //     console.log(doc)
+    //     const { inStock } = doc.data()
+    //     const itemInCart = items.find(item => item.slug === doc.slug)
+    //     if (itemInCart.quantity >= inStock ) {
+    //         batch.update(doc.ref, {inStock: inStock - itemInCart.quantity })
+    //     } else {
+    //         outOfStock.push(itemInCart)
+    //     }
+    // })
+
+    // if (outOfStock.length > 0) return outOfStock
     const order = {
         client: values,
         items: items.map(item => ({
@@ -20,16 +52,21 @@ const createOrder = async (values, items) => {
     const docId = Timestamp.fromDate(new Date()).toMillis()
     const orderRef = doc(db, "ordenes", String(docId))
     await setDoc(orderRef, order)
+    //await batch.commit()
     return docId
 }
 
 const ClientForm = () => {
     const { cart } = useCartContext()
+    // const { user } = useAuthContext()
 
     const [values, setValues] = useState({
+        //updateProfile en firebase
+       // email: user.email,
+       //nombre: user.displayName
         email: "",
         direccion: "",
-        nombre: ""
+         nombre: ""
     })
 
     const handleChange = (e) => {
