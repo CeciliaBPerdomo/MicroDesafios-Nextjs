@@ -33,7 +33,7 @@ const Navbar = () => {
         <>
             <header className="w-full py-6 bg-red-200 border-b border-red-600">
                 <div className='container m-auto flex justify-between items-center'>
-                    <p className='text-4xl text-bold text-slate-100 ml-4'>
+                    <p className='text-4xl text-bold text-slate-100 mr-8'>
                         <Link href={"/"}>
                             <Image
                                 src={"/Logo.png"}
@@ -43,7 +43,7 @@ const Navbar = () => {
                             />
                         </Link>
                     </p>
-                    <nav className='flex justify-between gap-2 mr-4'>
+                    <nav className='flex justify-between gap-2 mr-6'>
                         {links.map(link => {
                             return (
                                 <Link

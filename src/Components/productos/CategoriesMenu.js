@@ -14,7 +14,7 @@ const CategoriesMenu = () => {
     const pathname = usePathname()   
     
     return (
-        <aside className="flex flex-col gap-3 text-red-600">
+        <aside className="flex flex-col gap-3 text-red-600 ml-6">
             {links.map(link => (
                 <Link 
                 key={link.label}

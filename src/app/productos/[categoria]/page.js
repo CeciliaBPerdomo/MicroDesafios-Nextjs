@@ -26,9 +26,8 @@ const Productos = ({ params }) => {
     return (
         <>
             <div className="container m-auto">
-                <h1 className="text-2xl text-bold">📋 Nuestros productos:</h1>
-                <hr />
-                <br />
+                <h1 className="text-2xl text-bold ml-8 border-b pb-2 mb-6">📋 Nuestros productos:</h1>
+
                 <div className="flex gap-10">
                     <CategoriesMenu />
 

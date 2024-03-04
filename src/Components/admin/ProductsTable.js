@@ -27,7 +27,7 @@ const ProductsTable = async () => {
                         <tr key={item.slug} className="border-b">
                             <td className="p-2">
                                 <Image
-                                  src={item.image}
+                                    src={item.image}
                                     alt={item.title}
                                     width={80}
                                     height={60}
@@ -41,14 +41,14 @@ const ProductsTable = async () => {
                             <td className="p-2 text-left">{item.slug}</td>
                             <td className="p-2 truncate max-w-prose">{item.description}</td>
                             <td className="p-2">
-                                <Link href={`/admin/edit/${item.slug}`} 
-                                className="rounded bg-green-400 p-2 text-white"
+                                <Link href={`/admin/edit/${item.slug}`}
+                                    className="rounded bg-green-400 p-2 text-white"
                                 >
                                     Editar
                                 </Link>
 
-                                <Link href={`/admin/delete/${item.slug}`} 
-                                className="rounded bg-red-400 ml-2 p-2 text-white"
+                                <Link href={`/admin/delete/${item.slug}`}
+                                    className="rounded bg-red-400 ml-2 p-2 text-white"
                                 >
                                     Eliminar
                                 </Link>
