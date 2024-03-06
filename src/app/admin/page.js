@@ -20,7 +20,11 @@ const Admin = () => {
                 </Link>
 
                 <Link href="/orders">
-                <Boton>Ver órdenes de compra</Boton>
+                    <Boton>Ver órdenes de compra</Boton>
+                </Link>
+
+                <Link href="/mensajes">
+                    <Boton>Ver mensajes recibidos</Boton>
                 </Link>
             </div>
 

@@ -1,8 +1,14 @@
 "use client"
 import { useState } from "react"
 import Boton from "@/Components/Boton";
+import { useRouter } from "next/navigation";
+
+// Firebase
+import { db } from "../../app/firebase/config"
+import { setDoc, doc, Timestamp, getDoc, writeBatch } from "firebase/firestore"
 
 const Contacto = () => {
+    const router = useRouter()
     const [values, setValues] = useState({
         email: "",
         text: ""
@@ -17,10 +23,18 @@ const Contacto = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await fetch(`${process.env.API_URL}/api/contacto`, {
+        let url = "api/contacto"
+
+        await fetch(url, {
             method: "POST",
             body: JSON.stringify(values)
         })
+
+        const docId = Timestamp.fromDate(new Date()).toMillis()
+        const orderRef = doc(db, "mensajes", String(docId))
+        await setDoc(orderRef, values)
+
+        router.push("/thanks")
     }
 
     return (

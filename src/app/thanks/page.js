@@ -9,10 +9,10 @@ const Thanks = () => {
     return (
         <div className='container m-auto mr-6'>
             <h2 className='text-2xl text-red-600'>
-                Gracias por su compra!
+                Gracias por tu preferencia!
             </h2>
             <h2 className='text-xl mb-6'>
-                Esperamos que la disfrute!
+                A la brevedad nos comunicaremos contigo!
             </h2>
 
             <Boton onClick={() => router.push("/")}>
